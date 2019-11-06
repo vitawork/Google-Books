@@ -1,0 +1,29 @@
+img {
+  margin-top: 6px;
+}
+
+.floatl {
+  float: left !important;
+}
+
+p {
+  margin-top: 0;
+}
+h4 a {
+  margin-right: 0 !important;
+}
+
+.fixed-action-btn {
+  position: absolute;
+  display: inline-block;
+  right: 19px;
+  top: -39px;
+}
+
+.margtop{
+  margin-top: 35px;
+}
+
+.material-icons:hover, img:hover{
+  opacity: 0.7;
+}

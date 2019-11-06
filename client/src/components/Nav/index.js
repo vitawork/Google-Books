@@ -1,11 +1,23 @@
 import React from "react";
+import "./style.css";
 
-function Nav() {
+function Nav(props) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand" href="/">
-        React app
-      </a>
+    <nav>
+      <div className="nav-wrapper">
+        <ul id="nav-mobile" className="left hide-on-med-and-down">
+          <li className={props.home ? "active" : ""}>
+            <b>
+              <a href="/">Home</a>
+            </b>
+          </li>
+          <li className={props.saved ? "active" : ""}>
+            <b>
+              <a href="/saved">Saved</a>
+            </b>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }

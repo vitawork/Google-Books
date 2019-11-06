@@ -1,0 +1,19 @@
+/* .search-wrapper {
+  width: 100%;
+  padding: 0 30px 0 30px;
+} */
+
+#search {
+  width: 93%;
+}
+
+#searchicon {
+  width: 7%;
+  border: 0;
+  background: #ffffff00;
+  min-height: 0px;
+}
+
+.col{
+    width: 100%;
+}
