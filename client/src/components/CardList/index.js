@@ -10,7 +10,7 @@ function CardList(props) {
             <div className="card horizontal">
               <div className="fixed-action-btn horizontal">
                 <a
-                  className="btn-floating btn-large red"
+                  className="btn-floating btn-large black-button"
                   onClick={
                     props.add
                       ? () => props.addBook(book._id)
@@ -25,7 +25,9 @@ function CardList(props) {
               <div className="card-stacked">
                 <div className="card-action center">
                   <h4>
-                    <a href={book.link}>{book.title}</a>
+                    <i>
+                      <a href={book.link}>{book.title}</a>
+                    </i>
                   </h4>
                   <p>Written By{book.authors.map(aut => ` ${aut}.`)}</p>
                 </div>

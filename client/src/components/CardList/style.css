@@ -20,10 +20,15 @@ h4 a {
   top: -39px;
 }
 
-.margtop{
+.margtop {
   margin-top: 35px;
 }
 
-.material-icons:hover, img:hover{
+.material-icons:hover,
+img:hover {
   opacity: 0.7;
+}
+
+.btn-floating {
+  background-color: rgb(41, 40, 40);
 }

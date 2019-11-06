@@ -11,11 +11,14 @@ class Search extends Component {
     search: ""
   };
 
-  emptyingInput = event => {
+  deletingMessage = event => {
+    if (this.state.search === "No Books Found.") {
+      this.setState({ search: "" });
+    }
     // const { name, value } = event.target;
     // if (name === "search") {
     //   this.setState({ search: "" });
-    //   console.log("+++++++++++blur ");////////////////
+    //   console.log("+++++++++++blur ");////////
     // }
   };
 
@@ -36,12 +39,13 @@ class Search extends Component {
         GoogleAPI.getGoogleBooks({ text: this.state.search })
           .then(res => {
             const books = [];
+            let search = "";
             if (res.data.length !== 0) {
               res.data.map(book => {
                 if (
                   book.volumeInfo.title &&
                   book.volumeInfo.description &&
-                  book.volumeInfo.imageLinks.smallThumbnail &&
+                  book.volumeInfo.imageLinks &&
                   book.volumeInfo.authors &&
                   book.volumeInfo.infoLink
                 ) {
@@ -60,9 +64,11 @@ class Search extends Component {
                   }
                 }
               });
+            } else {
+              search = "No Books Found.";
             }
 
-            this.setState({ books: books, search: "" });
+            this.setState({ books, search });
           })
           .catch(err => {
             console.log(err);
@@ -94,41 +100,67 @@ class Search extends Component {
 
   render() {
     return (
-      <Container>
-        <Row center>
-          <Col size="m12">
-            <h1 className="center">Google Books Search</h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="offset-s1 s10 offset-m3 m6">
-            <div className="search-wrapper center">
-              <form
-                className="center"
-                onSubmit={e => this.handleFormSubmit(e)}
-                onBlur={e => this.emptyingInput(e)}
-              >
-                <input
-                  id="search"
-                  name="search"
-                  value={this.state.search}
-                  type="search"
-                  placeholder="Search"
-                  required
-                  onChange={this.handleInputChange}
-                />
-                <button type="submit" id="searchicon">
-                  <i className="material-icons">search</i>
-                </button>
-                <div className="search-results"></div>
-              </form>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <CardList books={this.state.books} add addBook={this.addBook} />
-        </Row>
-      </Container>
+      <div>
+        <Container empty={this.state.books.length > 0 ? false : true}>
+          <Row center>
+            <Col size="m12">
+              <h1 className="center">Google Books Search</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col size="offset-s1 s10 offset-m3 m6">
+              <div className="search-wrapper center">
+                <form
+                  className="center"
+                  onSubmit={e => this.handleFormSubmit(e)}
+                  onBlur={e => this.deletingMessage(e)}
+                >
+                  <input
+                    id="search"
+                    name="search"
+                    value={
+                      this.state.search === "No Books Found."
+                        ? ""
+                        : this.state.search
+                    }
+                    type="search"
+                    placeholder={
+                      this.state.search === "No Books Found." ? "" : "Search"
+                    }
+                    required
+                    onChange={this.handleInputChange}
+                  />
+                  <button type="submit" id="searchicon">
+                    <i className="material-icons">search</i>
+                  </button>
+                  <div className="search-results"></div>
+                </form>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col size="offset-s1 s10 offset-m3 m6">
+              <div className="search-wrapper center">
+                <h5>
+                  {this.state.search === "No Books Found."
+                    ? this.state.search
+                    : " "}
+                </h5>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <CardList books={this.state.books} add addBook={this.addBook} />
+          </Row>
+        </Container>
+        <div
+          className={`center ${
+            this.state.books.length > 0 ? "foot" : "footfixed"
+          }`}
+        >
+          <p>© 2019 Copyright Text</p>
+        </div>
+      </div>
     );
   }
 }

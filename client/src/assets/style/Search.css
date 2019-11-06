@@ -14,6 +14,22 @@
   min-height: 0px;
 }
 
-.col{
-    width: 100%;
+.col {
+  width: 100%;
+}
+h5 {
+  color: rgb(218, 131, 131);
+}
+h1 {
+  color: white;
+}
+
+.foot {
+  bottom: 40px;
+}
+
+.footfixed {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }

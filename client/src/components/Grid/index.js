@@ -3,9 +3,11 @@ import React from "react";
 // Exporting the Container, Row, and Col components from this file
 
 // This Container component allows us to use a bootstrap container without worrying about class names
-export function Container({ center, children }) {
+export function Container({ empty, children }) {
   return (
-    <div className={`container ${center ? "center" : ""}`}>{children}</div>
+    <div className="container" style={{ marginTop: empty ? "200px" : "0" }}>
+      {children}
+    </div>
   );
 }
 

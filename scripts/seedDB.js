@@ -14,7 +14,7 @@ const bookSeed = [
     image:
       "http://books.google.com/books/content?id=YbtNDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     link:
-      "http://play.google.com/books/reader?id=YbtNDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api"
+      "https://play.google.com/store/books/details?id=YbtNDwAAQBAJ&source=gbs_api"
   },
   {
     title: "Lord of the Flies",
@@ -24,7 +24,7 @@ const bookSeed = [
     image:
       "http://books.google.com/books/content?id=iyfgqV5dxXQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
     link:
-      "http://play.google.com/books/reader?id=iyfgqV5dxXQC&hl=&printsec=frontcover&source=gbs_api"
+      "https://play.google.com/store/books/details?id=iyfgqV5dxXQC&source=gbs_api"
   },
   {
     title: "Peter's Destiny",
@@ -34,7 +34,7 @@ const bookSeed = [
     image:
       "http://books.google.com/books/content?id=KGCfG8pGAIQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
     link:
-      "http://play.google.com/books/reader?id=KGCfG8pGAIQC&hl=&printsec=frontcover&source=gbs_api"
+      "http://books.google.com/books?id=KGCfG8pGAIQC&dq=Peter%27s+Destiny&hl=&source=gbs_api"
   },
   {
     title: "The Hunger Games",
@@ -44,7 +44,7 @@ const bookSeed = [
     image:
       "http://books.google.com/books/content?id=sazytgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     link:
-      "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api"
+      "https://play.google.com/store/books/details?id=zM-vZ-JiSFYC&source=gbs_api"
   }
 ];
 

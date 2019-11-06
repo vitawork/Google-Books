@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import API from "../utils/API";
 import CardList from "../components/CardList";
+import "../assets/style/Search.css";
 
 class Saved extends Component {
   state = {
@@ -30,13 +31,22 @@ class Saved extends Component {
 
   render() {
     return (
-      <Container>
-        <Row>
-          <Col>
-            <CardList books={this.state.books} deleteBook={this.deleteBook} />
-          </Col>
-        </Row>
-      </Container>
+      <div>
+        <Container>
+          <Row>
+            <Col size="bookscol">
+              <CardList books={this.state.books} deleteBook={this.deleteBook} />
+            </Col>
+          </Row>
+        </Container>
+        <div
+          className={`center ${
+            this.state.books.length > 0 ? "foot" : "footfixed"
+          }`}
+        >
+          <p>© 2019 Copyright Text</p>
+        </div>
+      </div>
     );
   }
 }
