@@ -29,7 +29,7 @@ function CardList(props) {
                       <a href={book.link}>{book.title}</a>
                     </i>
                   </h4>
-                  <p>Written By{book.authors.map(aut => ` ${aut}.`)}</p>
+                  <p><b>Written By{book.authors.map(aut => ` ${aut}.`)}</b></p>
                 </div>
                 <div className="card-action">
                   <a className="floatl" href={book.link}>
